@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #07111a; color: #fff; font-family: Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+.nav { position: fixed; inset: 0 0 auto; padding: 22px 6vw; z-index: 4; display: flex; justify-content: space-between; background: #07111ac0; backdrop-filter: blur(10px); }
+.experience { height: 560vh; }
+.sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 70% 50%, #344d60, #07111a 75%); }
+.sticky canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.ambient-glow { position: absolute; inset: -20%; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 68% 48%, #60819a40 0, #233c4e22 31%, transparent 62%); animation: glow-drift 14s ease-in-out infinite alternate; }
+.copy { position: absolute; left: 7vw; top: 27%; width: 42%; z-index: 2; pointer-events: none; }
+.copy h1 { font-size: clamp(55px, 8vw, 115px); line-height: .9; letter-spacing: -.085em; }
+.copy p { max-width: 400px; color: #c5d6e0; line-height: 1.8; }
+.eyebrow { color: #b5dbe9; font-size: 12px; letter-spacing: .22em; }
+.chapter-title { color: #eaf4fb; }
+.buy { pointer-events: auto; display: inline-block; padding: 17px 26px; background: #c0e4ed; color: #09131c; font-size: 12px; font-weight: bold; letter-spacing: .12em; }
+.hint { position: absolute; z-index: 2; bottom: 30px; left: 7vw; font-size: 12px; letter-spacing: .16em; color: #b5dbe9; }
+.below { padding: 100px 9vw; background: #13212b; }
+.below h2 { font-size: clamp(50px, 8vw, 100px); letter-spacing: -.08em; }
+.below p { max-width: 760px; line-height: 1.8; color: #cad8df; }
+.below details { padding: 20px 0; border-bottom: 1px solid #ffffff44; }
+.below summary { cursor: pointer; }
+.below .credit { font-size: 13px; }
+.below .credit a { text-decoration: underline; text-underline-offset: 3px; }
+@keyframes glow-drift { from { transform: translate3d(-1%, -1%, 0) scale(.98); } to { transform: translate3d(1%, 1%, 0) scale(1.04); } }
+@media (max-width: 750px) { .copy { top: 15%; left: 6vw; width: 85%; } .copy h1 { font-size: 58px; } .copy p { max-width: 250px; font-size: 14px; } .hint { left: 6vw; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ambient-glow, .gradient-text { animation: none; } }
