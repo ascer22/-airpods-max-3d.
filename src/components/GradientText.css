@@ -1,0 +1,17 @@
+.gradient-text {
+  --gradient-angle: 0deg;
+  --gradient-duration: 5s;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(var(--gradient-angle), #ffaa40 10%, #9c40ff 50%, #ffaa40 90%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-text-flow var(--gradient-duration) linear infinite;
+}
+.gradient-text__svg { position: absolute; width: 0; height: 0; }
+.gradient-text__content { color: inherit; }
+.gradient-text--border { padding: .08em .2em; border: 1px solid transparent; border-image: linear-gradient(90deg, #ffaa40, #9c40ff, #ffaa40) 1; }
+@keyframes gradient-text-flow { from { background-position: 0% 50%; } to { background-position: 300% 50%; } }
+@media (prefers-reduced-motion: reduce) { .gradient-text { animation-duration: 20s; } }
